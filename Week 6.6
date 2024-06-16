@@ -1,0 +1,12 @@
+from collections import Counter
+def count_frequency(arr):
+    freq = Counter(arr)
+    for key, value in freq.items():
+        print(f"{key} occurs {value} times")
+if __name__ == "__main__":
+    arr=[]
+    x=int(input())
+    for i in range(0,x):
+       y=int(input())
+       arr.append(y)
+    count_frequency(arr)
