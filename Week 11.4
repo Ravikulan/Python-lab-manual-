@@ -1,0 +1,16 @@
+import math
+
+def safe_square_root():
+    try:
+        num = input()
+        num = float(num)
+        if num < 0:
+            raise ValueError("Cannot calculate the square root of a negative number.")
+        result = math.sqrt(num)
+        print(f"The square root of {num} is {result:.2f}")
+    except ValueError as e:
+        if str(e) == "could not convert string to float: '{}'".format(num):
+            print("Error: could not convert string to float")
+        else:
+            print(f"Error: {e}")
+safe_square_root()
