@@ -1,0 +1,19 @@
+import math
+
+def find_factors(n):
+    factors = set()
+    for i in range(1, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            factors.add(i)
+            factors.add(n // i)
+    return sorted(factors)
+
+def find_pth_factor(n, p):
+    factors = find_factors(n)
+    if p <= len(factors):
+        return factors[p - 1]
+    else:
+        return 0
+n = int(input())
+p = int(input())
+print(find_pth_factor(n, p))
