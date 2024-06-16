@@ -1,0 +1,30 @@
+def eliminate_common_elements(arr1, arr2):
+    # Convert both arrays to sets
+    set1 = set(arr1)
+    set2 = set(arr2)
+    
+    # Find the elements that are unique to each set
+    unique_to_set1 = set1 - set2
+    unique_to_set2 = set2 - set1
+    
+    # Combine the unique elements
+    non_repeating_elements = unique_to_set1.union(unique_to_set2)
+    
+    # If there are no non-repeating elements
+    if not non_repeating_elements:
+        print("NO SUCH ELEMENTS")
+    else:
+        # Print the non-repeating elements and their count
+        print(" ".join(map(str, sorted(non_repeating_elements))))
+        print(len(non_repeating_elements))
+
+# Read input
+sizes = input().split()
+size1 = int(sizes[0])
+size2 = int(sizes[1])
+
+arr1 = list(map(int, input().split()))
+arr2 = list(map(int, input().split()))
+
+# Eliminate common elements and print the result
+eliminate_common_elements(arr1, arr2)
