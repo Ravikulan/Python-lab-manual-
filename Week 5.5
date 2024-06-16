@@ -1,0 +1,11 @@
+def remove_characters(s1, s2):
+    s2_set = set(s2)
+    result = ''
+    for char in s1:
+        if char not in s2_set:
+            result += char
+   
+    return result
+s1 = input()
+s2 = input()
+print( remove_characters(s1
