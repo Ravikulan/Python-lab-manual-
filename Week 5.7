@@ -1,0 +1,9 @@
+def second_word_upper(sentence):
+    words = sentence.split()
+    if len(words) < 2:
+        return "LESS"
+    second_word = words[1].upper()
+    return second_word
+
+x=input()
+print(second_word_upper(x))
