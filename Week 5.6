@@ -1,0 +1,8 @@
+def find_substring(string1, string2):
+    for i in range(len(string1)):
+        if string1[i:i+len(string2)] == string2:
+            return i
+    return -1
+String1 = input()
+String2 = input()
+print( find_substring(String1, String2))
