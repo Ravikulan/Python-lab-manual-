@@ -1,0 +1,35 @@
+def categorize_books():
+    # Initialize an empty dictionary to store books by genre
+    book_dict = {}
+
+    # Prompt the user to enter book titles and genres
+    print("Enter book titles and genres separated by a comma (e.g., 'Book Title, Genre'). Enter a blank line to finish:")
+
+    while True:
+        # Read a line of input
+        line = input().strip()
+        
+        # Break the loop if the input line is empty
+        if not line:
+            break
+        
+        # Split the line into book title and genre
+        try:
+            title, genre = line.split(',', 1)
+            title = title.strip()
+            genre = genre.strip()
+            
+            # Add the book title to the corresponding genre list in the dictionary
+            if genre in book_dict:
+                book_dict[genre].append(title)
+            else:
+                book_dict[genre] = [title]
+        except ValueError:
+            print("Invalid input format. Please enter in the format 'Book Title, Genre'.")
+
+    # Output the categorized books
+    for genre, titles in book_dict.items():
+        print(f"{genre}: {', '.join(titles)}")
+
+# Run the categorize_books function
+categorize_books()
