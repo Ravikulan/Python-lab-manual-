@@ -1,0 +1,5 @@
+sal=int(input())
+dall=0.4*sal
+rall=0.2*sal
+grosal=sal+dall+rall
+print(int(grosal))
