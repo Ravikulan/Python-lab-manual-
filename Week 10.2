@@ -1,0 +1,31 @@
+def bubble_sort(arr):
+    n = len(arr)
+    num_swaps = 0
+    
+    for i in range(n):
+        swapped = False
+        
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Swap elements
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                num_swaps += 1
+                swapped = True
+        
+        # If no elements were swapped, the array is already sorted
+        if not swapped:
+            break
+            
+    return num_swaps, arr
+
+# Read input
+n = int(input().strip())
+a = list(map(int, input().strip().split()))
+
+# Sort the array using bubble sort
+num_swaps, sorted_a = bubble_sort(a)
+
+# Print the results
+print(f"List is sorted in {num_swaps} swaps.")
+print(f"First Element: {sorted_a[0]}")
+print(f"Last Element: {sorted_a[-1]}")
