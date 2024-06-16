@@ -1,0 +1,8 @@
+
+n = int(input())
+arr = [int(input()) for _ in range(n)]
+distinct_elements = set()
+for num in arr:
+    distinct_elements.add(num)
+distinct_elements = sorted(list(distinct_elements))
+print(*distinct_elements)
